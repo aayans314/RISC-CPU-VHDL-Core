@@ -1,0 +1,38 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+
+-- Quartus II generated Memory Initialization File (.mif)
+
+WIDTH=16;
+DEPTH=256;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	000  :   1111100000000000; -- Move immediate 0 into Register A
+	001  :   1111100000001001; -- Move immediate 1 into Register B
+	002  :   0110000000011010; -- Store Register A to Output (out 0)
+	003  :   0110001000000000; -- Store Register B to Output (out 1)
+	004  :   1111100001000010; -- Store 8 to Register C (for loop of 8, since we print out 2 already)
+	005  :   1000000001000011; -- ADD Register A and B and store to D (d is the fibonacci term)
+	006  :   1111000100000000; -- Move Register B to Register A (this is like going up the fibonacci steps)
+	007  :   1111001100000001; -- Move Register D to Register B (second part of the same idea)
+	008  :   0110011000000000; -- Store Register D to Output (onwards from term 3)
+	009  :   1111100000001100; -- Store 1 to Register E (Storing this to subtract from C)
+	00A  :   1001010100000010; -- Subtact Register E from Register C and store in Register c (Loop decrement)
+	00B  :   0011000000001101; -- Branch to Line 0D if CR=0001 (Checking if Register C is 0)
+	00C  :   0010000000000101; -- Branch to Line 05
+	[00D..0FF]  :   1111111111111111;
+END;
